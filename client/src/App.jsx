@@ -27,7 +27,7 @@ function App() {
     
     if(subject!="" && description!=""){
     axios
-      .post("http://localhost:3000/chat", {
+      .post("https://email-server-suq7.onrender.com/chat", {
         subject,
         description,
       })
