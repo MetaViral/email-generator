@@ -1,0 +1,8 @@
+// Mixins
+@mixin flexItem($direction, $content) {
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;
+  justify-content: $content;
+  flex-wrap: wrap;
+}

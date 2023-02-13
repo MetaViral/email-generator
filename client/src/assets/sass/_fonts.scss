@@ -1,0 +1,24 @@
+@font-face {
+  src: url("../fonts/Inter-Regular.ttf") format("truetype");
+  font-family: "Inter";
+}
+
+@font-face {
+  src: url("../fonts/Inter-ExtraBold.ttf") format("truetype");
+  font-family: "InterExtraBold";
+}
+
+
+$inter: "Inter";
+$interExtraBold: "InterExtraBold";
+
+$heading-lg: 60px;
+$subtitle-text: 20px;
+$subtitle-lg: 2em;
+$subheading-lg: 1.4em;
+$text-lg: 1em;
+$contact-font-size-lg: 3.2em;
+$mbfont: 1.6em;
+$heading-sm: 1.85em;
+$subtitle-sm: 1.5em;
+$subheading-sm: 1.3em;

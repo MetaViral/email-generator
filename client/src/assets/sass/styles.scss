@@ -1,0 +1,1154 @@
+/* Description: Master CSS file */
+
+/*****************************************
+Table Of Contents:
+- Css Reset
+- Colors
+- Mixins
+- Navigation Bar
+- Hero Section
+- About Section
+- Portfolio Section
+- Tech Stack Section
+- Contact Section
+- About Page
+- Contact Page
+- Team Page
+- Quote Table
+- Quote Detail Page
+- Footer
+- Quote Error Component
+- NotFound
+- Mediaqueries
+******************************************/
+
+/*****************************************
+
+******************************************/
+
+/**************************/
+/*        Css Reset       */
+/**************************/
+
+@import "reset";
+
+/**********************/
+/*       Colors       */
+/**********************/
+@import "colors";
+
+/**********************/
+/*       Mixins       */
+/**********************/
+@import "mixins";
+
+/**********************/
+/*   Navigation Bar   */
+/**********************/
+
+nav {
+  border-bottom: 0.4px solid #e1e1e1;
+  background-color: $white;
+  width: 100%;
+  height: 80px;
+  z-index: 50;
+
+  @include flexItem(row, space-between);
+
+  &.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .nav-item-container {
+    width: 87%;
+    margin: 0 auto;
+
+    @include flexItem(row, space-between);
+
+    .navbar-brand {
+      width: 10%;
+      @include flexItem(row, space-between);
+      align-items: center;
+      img {
+        width: 100%;
+      }
+    }
+
+    .nav-item-list {
+      @include flexItem(row, space-between);
+      transform: translateY(0.5rem);
+
+      .nav-item {
+        .nav-link {
+          margin: 0 0 0 2rem;
+          font-size: $text-lg;
+          color: $heading-color;
+          cursor: pointer;
+
+          &.active {
+            color: $green;
+          }
+        }
+
+        &:nth-of-type(6) {
+          .nav-link {
+            @include flexItem(row, space-between);
+            align-items: center;
+
+            &.active {
+              color: $green;
+            }
+
+            img {
+              margin-left: 0.4rem;
+            }
+
+            padding: 0.45rem 1rem;
+            border: 1px solid $green;
+            border-radius: 8px;
+            color: $green;
+          }
+        }
+      }
+    }
+
+    .menu-btn {
+      display: none;
+    }
+  }
+}
+
+/**************************/
+/*      Hero Section      */
+/**************************/
+.hero-section {
+  position: relative;
+
+  .hero-icon-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 22rem;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.7) translate(-50%, -90%);
+    }
+    100% {
+      transform: scale(1.2) translate(-50%, -90%);
+    }
+  }
+
+  .hero-icon-subtract {
+    position: absolute;
+    top: 13%;
+    left: 7%;
+    z-index: 7;
+    width: 2rem;
+    animation: rotate 5s linear infinite;
+  }
+
+  .hero-icon-subtract-end {
+    position: absolute;
+    bottom: 13%;
+    right: 7%;
+    z-index: 7;
+    width: 1rem;
+    animation: rotate 5s linear infinite;
+  }
+
+  .hero-icon-star {
+    position: absolute;
+    top: 26%;
+    left: 57%;
+    transform: translate(-50%, -90%);
+    z-index: 7;
+    width: 5rem;
+    animation: pulse 5s linear infinite;
+  }
+
+  .hero-content {
+    padding: 5rem 0;
+    position: relative;
+    z-index: 10;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+      margin-top: 4rem;
+      font-size: $heading-lg;
+      font-family: $interExtraBold;
+      color: $black;
+    }
+
+    p {
+      margin-top: 1.8rem;
+      font-size: $subtitle-text;
+      color: #3e3e3e;
+    }
+
+    .call-to-action {
+      margin-top: 3.7rem;
+      @include flexItem(row, center);
+
+      .contact {
+        padding: 0.8rem 1rem;
+        border: 1px solid $green;
+        border-radius: 8px;
+        background-color: $green;
+        color: $white;
+        margin-right: 0.5rem;
+        width: 10rem;
+        cursor: pointer;
+        font-size: $text-lg;
+      }
+
+      .view-works {
+        padding: 0.8rem 1rem;
+        border: 1px solid $green;
+        border-radius: 8px;
+        background-color: $white;
+        color: $green;
+        margin-left: 0.5rem;
+        width: 10rem;
+        cursor: pointer;
+        font-size: $text-lg;
+      }
+    }
+  }
+}
+
+/**************************/
+/*     About Section      */
+/**************************/
+.about-section {
+  padding: 6rem 0;
+  background-color: $black;
+
+  h1 {
+    font-family: $interExtraBold;
+    font-size: $subtitle-lg;
+    text-align: center;
+    color: $white;
+  }
+
+  .subtitle-text {
+    width: 50%;
+    margin: 1.6rem auto;
+    font-size: $subtitle-text;
+    text-align: center;
+    color: $white;
+  }
+
+  .about-ecolabz {
+    color: $white;
+    width: 80%;
+    margin: 0 auto;
+
+    .content {
+      margin: 1rem 0;
+
+      img {
+        width: 4rem;
+        margin-bottom: 0.5rem;
+      }
+
+      &:nth-of-type(4) {
+        img {
+          width: 3.4rem;
+        }
+      }
+
+      h5 {
+        font-weight: bold;
+        letter-spacing: 0.1px;
+        font-size: 24px;
+      }
+
+      p {
+        color: $white;
+        font-size: $text-lg;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+/**************************/
+/*    Portfolio Section   */
+/**************************/
+.portfolio-section {
+  padding: 5rem 0;
+  width: 87%;
+  margin: 0 auto;
+
+  .our-projects {
+    color: $green;
+
+    font-size: $subtitle-text;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+  }
+
+  h2 {
+    margin: 1rem auto 7rem auto;
+    font-size: $heading-lg;
+    font-weight: bolder;
+    .box {
+      width: 65%;
+    }
+  }
+
+  h1 {
+    font-size: $subtitle-lg;
+    font-family: $interExtraBold;
+    text-align: center;
+    color: $heading-color;
+  }
+
+  .subtitle-text {
+    margin: 1.6rem 0 5rem 0;
+    font-size: $subtitle-text;
+    text-align: center;
+    color: $heading-color;
+  }
+
+  .portfolio-container {
+    width: 88%;
+    margin: 0 auto;
+    .row-item {
+      @include flexItem(row, center);
+      .project {
+        margin: 1rem 1rem;
+        width: 45%;
+
+        img {
+          width: 100%;
+        }
+
+        &:nth-child(even) {
+          transform: translateY(-4rem);
+        }
+      }
+
+      .content {
+        padding: 0 1.1rem;
+        h5 {
+          color: $heading-color;
+          font-weight: bolder;
+          letter-spacing: 0.1px;
+          font-size: $subheading-lg;
+        }
+
+        .brand {
+          border-bottom: 1px solid $green;
+          position: relative;
+          width: fit-content;
+          height: fit-content;
+          margin: 0.6rem 0;
+        }
+
+        p {
+          margin-top: 0.7rem;
+          font-size: $text-lg;
+        }
+
+        .link {
+          border: 1px solid #cdcdcd;
+          border-radius: 50px;
+          padding: 0.5rem 0.8rem;
+          color: #a4a4a4;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .divider {
+      height: 0.3px;
+      width: 90%;
+      background-color: #cdcdcd;
+      margin: 5rem auto 0 auto;
+    }
+  }
+}
+
+/**************************/
+/*   Tech Stack Section   */
+/**************************/
+.tech-stack {
+  padding: 4rem 0;
+
+  h1 {
+    font-size: $subtitle-lg;
+    font-family: $interExtraBold;
+    text-align: center;
+    color: $heading-color;
+  }
+
+  .tech-stack-container {
+    width: 80%;
+    margin: 2rem auto 0 auto;
+    @include flexItem(row, space-between);
+
+    .item {
+      width: 18%;
+      margin: 1.6rem 0;
+
+      img {
+        width: 100%;
+        height: 3rem;
+      }
+    }
+  }
+}
+
+/**************************/
+/*     Contact Section    */
+/**************************/
+.contact-section {
+  padding: 5rem 0;
+  background-color: $black;
+
+  h1 {
+    width: 50%;
+    margin: 0 auto;
+    font-size: $contact-font-size-lg;
+    font-family: $interExtraBold;
+    text-align: center;
+    color: $white;
+  }
+
+  .subtitle-text {
+    width: 39%;
+    margin: 1.8rem auto 0 auto;
+    font-size: $subtitle-text;
+    text-align: center;
+    color: $white;
+  }
+
+  .call-to-action {
+    margin-top: 2rem;
+    @include flexItem(row, center);
+
+    .contact {
+      padding: 1rem 1.5rem;
+      border: 1px solid $white;
+      border-radius: 8px;
+      background-color: $black;
+      color: $white;
+      width: 13rem;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}
+
+/**************************/
+/*     About us Page      */
+/**************************/
+.about-us-page {
+  padding: 5rem 0;
+  width: 87%;
+  margin: 0 auto;
+
+  .about-ecolabz {
+    color: $green;
+    font-size: $subtitle-text;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+  }
+
+  .content {
+    margin: 3rem auto;
+    font-size: $subtitle-text;
+    .text-lead {
+      width: 65%;
+      color: #3e3e3e;
+    }
+  }
+
+  .divider {
+    height: 0.3px;
+    width: 100%;
+    background-color: #cdcdcd;
+    margin: 4rem auto;
+  }
+
+  h3 {
+    font-weight: 900;
+    margin-bottom: 2.6rem;
+  }
+
+  .content {
+    margin: 1rem 0;
+
+    h5 {
+      font-weight: bold;
+      letter-spacing: 0.1px;
+    }
+
+    p {
+      font-size: $text-lg;
+      margin-top: 1rem;
+    }
+  }
+}
+
+/**************************/
+/*      Contact Page      */
+/**************************/
+.contact-page {
+  padding: 6rem 0;
+  width: 87%;
+  margin: 0 auto;
+
+  .contact-us {
+    color: $green;
+    font-size: $subtitle-text;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+  }
+
+  h2 {
+    margin: 1rem auto;
+    font-size: $heading-lg;
+    font-weight: bolder;
+  }
+
+  .box-content {
+    margin: 2rem auto;
+    font-size: $subtitle-text;
+    .text-lead {
+      color: #3e3e3e;
+    }
+  }
+
+  .form-group {
+    margin-top: 0.5rem;
+  }
+  .form-control-input,
+  .form-control-textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid #b9b9b9;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  .form-control-textarea {
+    width: 100%;
+    height: 7rem;
+    resize: none;
+  }
+
+  .form-control-submit-button {
+    width: 14rem;
+    height: 3.25rem;
+    border-radius: 8px;
+    background-color: #e5ae40;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: $text-lg;
+    cursor: pointer;
+    border: none;
+    margin-top: 2.5rem;
+  }
+
+  // .services {
+  //   .service-list {
+  //     width: 100%;
+
+  //     @include flexItem(row, space-between);
+
+  //     .form-item {
+  //       margin: 0.5rem 0;
+  //       width: 48%;
+  //       @include flexItem(row, flex-start);
+  //       padding: 0 0 0 1.1rem;
+  //       background-color: #e1e1e1;
+  //       border-radius: 16px;
+
+  //       .form-label {
+  //         cursor: pointer;
+  //         width: 90%;
+  //         padding: 1.3rem;
+  //         transform: translateY(0.2rem);
+
+  //         .form-content {
+  //           .form-name {
+  //             font-size: 0.875rem;
+  //             color: $text-color;
+  //           }
+  //         }
+  //       }
+
+  //       .form-input {
+  //         width: 20px;
+  //         height: 20px;
+  //         outline: 2px solid $green;
+  //         outline-offset: -2px;
+  //         accent-color: #32d583;
+  //         border-radius: 5px;
+
+  //         &:checked {
+  //           width: 20px;
+  //           height: 20px;
+  //           accent-color: $white;
+  //           outline: 2px solid #32d583;
+  //           outline-offset: -2px;
+  //           border-radius: 5px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+/**************************/
+/*        Team Page       */
+/**************************/
+.team-page {
+  padding: 5rem 0;
+  width: 87%;
+  margin: 0 auto;
+
+  .our-team {
+    color: $green;
+    font-size: $subtitle-text;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+  }
+
+  h2 {
+    margin: 1rem auto;
+    font-size: $heading-lg;
+    font-weight: bolder;
+  }
+
+  .content {
+    margin: 2rem 0;
+    width: 65%;
+
+    p {
+      margin-top: 1rem;
+      font-size: $subtitle-text;
+      color: #3e3e3e;
+    }
+  }
+
+  h3 {
+    font-weight: bolder;
+    margin-top: 4rem;
+  }
+
+  .card-container {
+    @include flexItem(row, flex-start);
+    margin: 3rem auto;
+    .card {
+      width: 20%;
+      padding: 2rem;
+      background-color: #f6f6f6;
+      border: 1px solid #b9b9b9;
+      box-shadow: 0px 8px 25px rgba(180, 180, 180, 0.25);
+      border-radius: 8px;
+      margin: 0 2rem 2rem 0;
+
+      @include flexItem(column, center);
+
+      img {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+      }
+
+      .name {
+        margin-top: 1rem;
+      }
+      .title {
+        font-weight: bolder;
+      }
+
+      .socials {
+        @include flexItem(row, center);
+        width: 100%;
+
+        a {
+          margin: 0 0.5rem;
+          img {
+            width: 1.3rem;
+            height: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+
+  .call-to-action {
+    padding: 3rem 0;
+    text-align: center;
+    .join-us {
+      background: rgba(166, 244, 197, 0.4);
+      color: $green;
+      border-radius: 8px;
+      padding: 0.85rem 2rem;
+    }
+  }
+}
+
+/**********************/
+/*     Quote Table    */
+/**********************/
+
+.card-table {
+  padding: 7rem 0;
+  .custom-container {
+    width: 88%;
+    margin: 0.1rem auto 0rem auto;
+
+    p {
+      font-size: 1.1em;
+    }
+  }
+
+  .header {
+    font-size: 1.1em;
+  }
+
+  .sub-text {
+    font-size: 1.1em;
+  }
+
+  height: 100%;
+  font-size: 0.79em;
+  padding-top: 1rem;
+
+  .header-container {
+    width: 88%;
+    margin: 0.1rem auto 0rem auto;
+    box-shadow: 0rem 0rem 0.2rem rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 2rem;
+    background: #fff;
+    cursor: pointer;
+
+    .text-lead {
+      padding-bottom: 1.2rem;
+      font-weight: bold;
+      font-size: 1.3em;
+    }
+
+    .header {
+      color: #999;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .col-1 {
+        width: 13%;
+      }
+
+      .col-2 {
+        width: 15%;
+      }
+
+      .col-3 {
+        width: 16%;
+      }
+
+      .col-4 {
+        width: 30%;
+      }
+    }
+  }
+
+  .sub-container {
+    width: 88%;
+    margin: 0.1rem auto 0rem auto;
+    box-shadow: 0rem 0rem 0.2rem rgba(0, 0, 0, 0.2);
+    padding: 1.7rem 2rem;
+    background: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background: #f9f9f9;
+      box-shadow: 0 2px 1.5px rgba(0, 0, 0, 0.034),
+        0 5px 4px rgba(0, 0, 0, 0.048), 0 8.5px 3px rgba(0, 0, 0, 0.06),
+        0 2.3px 7.9px rgba(0, 0, 0, 0.072);
+      transition: all 0.3s ease;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .col-1 {
+        width: 13%;
+      }
+
+      .col-2 {
+        width: 15%;
+      }
+
+      .col-3 {
+        width: 16%;
+      }
+
+      .col-4 {
+        width: 30%;
+      }
+    }
+  }
+}
+
+/**********************/
+/*  Quote Detail Page */
+/**********************/
+
+.detail-page {
+  padding: 5rem 0;
+
+  .detail-card {
+    width: 62%;
+    margin: 0 auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 0.5rem;
+    padding: 2rem;
+
+    .divider {
+      height: 0.2rem;
+      background-color: $gray;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    button {
+      padding: 0.7rem 1rem;
+      border-radius: 0.5rem;
+      box-shadow: none;
+      background-color: $white;
+      border: 0.1rem solid $heading-color;
+      font-weight: bold;
+      color: $black;
+      letter-spacing: 0.1rem;
+      transition: 0.3s ease;
+
+      &:hover {
+        transition: 0.3s ease;
+        background-color: $black;
+        color: $white;
+      }
+    }
+
+    .row-item {
+      @include flexItem(row, flex-start);
+      align-items: center;
+
+      h2 {
+        margin-right: 1rem;
+      }
+
+      .value {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+/*******************/
+/*  Login/Register */
+/*******************/
+
+.login-page {
+  padding: 5rem 0;
+
+  .form-group {
+    position: relative;
+    margin-bottom: 1.25rem;
+
+    .form-control-input,
+    .form-control-textarea {
+      width: 100%;
+      padding: 1.2rem;
+      border: 1px solid #cbcbd1;
+      border-radius: 8px;
+      background-color: #ffffff;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+
+      &:focus {
+        border: 1px solid #a1a1a1;
+        outline: none; /* Removes blue border on focus */
+      }
+
+      &:hover {
+        border: 1px solid #a1a1a1;
+      }
+    }
+
+    .form-control-textarea {
+      display: block;
+      height: 14rem;
+    }
+
+    .form-control-submit-button {
+      display: inline-block;
+      width: 80%;
+      height: 3.25rem;
+      border: 1px solid $heading-color;
+      border-radius: 30px;
+      background-color: $heading-color;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.875rem;
+      line-height: 0;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .form-control-submit-button:hover {
+      border: 1px solid $heading-color;
+      background-color: transparent;
+      color: $heading-color;
+    }
+  }
+}
+
+/**************************/
+/*         Footer         */
+/**************************/
+footer {
+  padding-top: 5rem;
+  background-color: $black;
+
+  .about {
+    color: $white;
+
+    .newsletter-section {
+      width: 100%;
+      @include flexItem(row, space-between);
+      align-items: center;
+
+      .row-item {
+        @include flexItem(column, space-between);
+        align-items: flex-start;
+
+        h5 {
+          color: $white;
+          margin-bottom: 2rem;
+        }
+
+        .input-box {
+          width: 100%;
+          .custom-newsletter {
+            position: relative;
+            width: 100%;
+          }
+          .custom-input {
+            width: 100%;
+            border-radius: 10px;
+            padding: 1rem 8.1rem 1rem 1.1rem;
+            line-height: 1;
+            outline: none;
+            background-color: $black;
+            color: $white;
+
+            &::placeholder {
+              font-size: $text-lg;
+            }
+          }
+          .custom-button {
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            bottom: 3px;
+            border: 0;
+            background: $green;
+            color: $white;
+            outline: none;
+            margin: 0;
+            padding: 0 1.6rem;
+            border-radius: 10px;
+            z-index: 2;
+            font-size: $text-lg;
+          }
+
+          .newsletter-form-info {
+            margin-top: 0.6rem;
+            .sending {
+              color: $green;
+            }
+
+            .newsletter-form-error {
+              color: #ff0000;
+            }
+
+            .success {
+              color: #00ffff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .contact-detail {
+    margin-bottom: 0.8rem;
+
+    @include flexItem(row, flex-start);
+    align-items: flex-start;
+    color: $white;
+
+    img {
+      width: 1rem;
+      margin-right: 0.8rem;
+    }
+    .column {
+      width: 80%;
+      p {
+        font-size: $text-lg;
+        margin: 0;
+      }
+    }
+  }
+
+  .contact-email-phone {
+    margin-bottom: 0.8rem;
+    color: $white;
+
+    img {
+      width: 1rem;
+      margin-right: 0.8rem;
+    }
+    span {
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  .footer-anchor-link {
+    h5 {
+      color: $white;
+      font-family: $interExtraBold;
+    }
+    .link {
+      display: block;
+      color: $white;
+      margin: 1rem 0;
+      cursor: pointer;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .all-rights-reserved {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+    background-color: $black;
+
+    p {
+      width: 86%;
+      font-size: $text-lg;
+      margin: 0 auto;
+      color: $white;
+    }
+
+    span {
+      color: #0cdc12;
+    }
+  }
+}
+
+/**************************/
+/*  Quote Error Component */
+/**************************/
+.error-component {
+  padding: 6rem 0;
+  width: 87%;
+  margin: 1rem auto;
+
+  h1 {
+    margin-bottom: 3rem;
+  }
+  .go-home {
+    padding: 0.7rem 1rem;
+    background-color: $green;
+    color: $white;
+    border-radius: 0.6rem;
+  }
+}
+
+/**************************/
+/*       NotFound         */
+/**************************/
+
+.page_404 {
+  padding: 40px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+
+  .notfound-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .heading {
+      font-size: 80px;
+      font-family: $interExtraBold;
+      text-align: center;
+    }
+
+    .content {
+      text-align: center;
+
+      p {
+        margin: 0.5rem 0 3rem 0;
+      }
+
+      .link_404 {
+        border-radius: 0.6rem;
+        padding: 0.7rem 1rem;
+        background-color: $green;
+        color: $white;
+      }
+    }
+  }
+}
+
+/**************************/
+/*       Mediaqueries     */
+/**************************/
+@import "xlg";
+@import "lg";
+@import "sm";
+@import "mobile";

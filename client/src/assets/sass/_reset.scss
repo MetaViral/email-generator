@@ -1,0 +1,23 @@
+// Css reset
+@import "fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: $inter;
+  list-style: none;
+
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+
+

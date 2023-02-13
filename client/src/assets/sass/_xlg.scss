@@ -1,0 +1,154 @@
+@media screen and (max-width: 1200px) {
+  .hero-section {
+    position: relative;
+
+    .hero-content {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+
+      h1 {
+        margin-top: 4rem;
+        font-size: $contact-font-size-lg;
+      }
+    }
+  }
+
+  // .contact-page {
+  //   .services {
+  //     .service-list {
+  //       .form-item {
+  //         .form-label {
+  //           width: 85%;
+  //         }
+
+  //         .form-input {
+  //           width: 18px;
+  //           height: 18px;
+
+  //           &:checked {
+  //             width: 18px;
+  //             height: 18px;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  .team-page {
+    .card-container {
+      .card {
+        width: 25%;
+
+        img {
+          width: 7rem;
+          height: 7rem;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .card-table {
+    .custom-container {
+      width: 90%;
+      margin: 0.1rem auto 0rem auto;
+    }
+
+    .header,
+    .sub-text {
+      font-size: 1.1em;
+    }
+
+    height: 100%;
+    font-size: 0.79em;
+    padding-top: 1rem;
+
+    .header-container {
+      width: 95%;
+
+      padding: 1.5rem 1rem;
+
+      .text-lead {
+        padding-bottom: 1.2rem;
+        font-weight: bold;
+      }
+
+      .header {
+        color: #999;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .col-1 {
+          width: 25%;
+        }
+
+        .col-2 {
+          display: none;
+        }
+
+        .col-3 {
+          width: 30%;
+        }
+
+        .col-4 {
+          width: 45%;
+        }
+      }
+    }
+
+    .sub-container {
+      width: 95%;
+
+      padding: 1.7rem 1rem;
+
+      .text-lead {
+        padding-bottom: 1rem;
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .col-1 {
+          width: 25%;
+        }
+
+        .col-2 {
+          display: none;
+        }
+
+        .col-3 {
+          width: 30%;
+        }
+
+        .col-4 {
+          width: 45%;
+        }
+      }
+    }
+  }
+
+  footer {
+    .all-rights-reserved {
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 1rem 0;
+
+      p {
+        width: 91%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
