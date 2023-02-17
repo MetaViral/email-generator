@@ -44,7 +44,7 @@ function App() {
 
   return (
       <main class="main-container">
-        <h2>Generate an Email</h2>
+        <h2>MetaViral Email Generator</h2>
         <div class="chat-input">
           <input
             type="text"
