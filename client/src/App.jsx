@@ -44,7 +44,7 @@ function App() {
 
   return (
       <main class="main-container">
-        <h2>Email Generator (Powered by GPT-3)</h2>
+        <h2>Generate an Email</h2>
         <div class="chat-input">
           <input
             type="text"
